@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+class Person {
+public:
+    virtual void displayRole() {
+        cout << "Person plays various roles." << endl;
+    }
+};
+class Woman : public Person {
+public:
+    void displayRole() override {
+        cout << "Woman plays roles like mother, daughter, sister, etc." << endl;
+    }
+};
+class Man : public Person {
+public:
+    void displayRole() override {
+        cout << "Man plays roles like employee, son, husband, customer, etc." << endl;
+    }
+};
+int main() {
+    Person* person1 = new Woman();
+    Person* person2 = new Man();
+    person1->displayRole();
+    person2->displayRole();
+
+    delete person1;
+    delete person2;
+    return 0;
+}
