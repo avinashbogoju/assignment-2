@@ -1,0 +1,90 @@
+#include <iostream>
+#include <string>
+
+class Vehicle {
+public:
+    int mileage;
+    double price;
+};
+
+class Car : public Vehicle {
+public:
+    double ownershipCost;
+    int warranty;
+    int seatingCapacity;
+    std::string fuelType;
+};
+
+class Bike : public Vehicle {
+public:
+    int numCylinders;
+    int numGears;
+    std::string coolingType;
+    double size;
+    std::string wheelType;
+    double fuelTankSize;
+};
+
+class Audi : public Car {
+public:
+    std::string modelType;
+};
+
+class Ford : public Car {
+public:
+    std::string modelType;
+};
+
+class Bajaj : public Bike {
+public:
+    std::string makeType;
+};
+
+class TVS : public Bike {
+public:
+    std::string makeType;
+};
+
+int main() {
+    Audi audi;
+    audi.modelType = "A6";
+    audi.ownershipCost = 50000.0;
+    audi.warranty = 3;
+    audi.seatingCapacity = 5;
+    audi.fuelType = "Petrol";
+    audi.mileage = 15;
+    audi.price = 60000.0;
+
+    Ford ford;
+    ford.modelType = "Fusion";
+    ford.ownershipCost = 45000.0;
+    ford.warranty = 2;
+    ford.seatingCapacity = 4;
+    ford.fuelType = "Diesel";
+    ford.mileage = 18;
+    ford.price = 55000.0;
+
+    Bajaj bajaj;
+    bajaj.makeType = "Pulsar";
+    bajaj.numCylinders = 1;
+    bajaj.numGears = 5;
+    bajaj.coolingType = "Air";
+    bajaj.size = 17.5;
+    bajaj.wheelType = "Alloys";
+    bajaj.fuelTankSize = 10.0;
+    bajaj.mileage = 40;
+    bajaj.price = 70000.0;
+
+    TVS tvs;
+    tvs.makeType = "Apache";
+    tvs.numCylinders = 2;
+    tvs.numGears = 6;
+    tvs.coolingType = "Liquid";
+    tvs.size = 16.0;
+    tvs.wheelType = "Spokes";
+    tvs.fuelTankSize = 12.0;
+    tvs.mileage = 35;
+    tvs.price = 75000.0;
+
+    return 0;
+}
