@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+int main() {
+    std::vector<int> arr = {14, 16, 37, 36, 25, 69, 34};
+    int M = 1;
+    int N = 3;
+
+    std::sort(arr.begin(), arr.end());
+
+    int mth_max = arr[arr.size() - M];
+    int nth_min = arr[N - 1];
+
+    int sum_diff = mth_max + nth_min;
+    int diff = mth_max - nth_min;
+
+    std::cout << "Mth Maximum: " << mth_max << std::endl;
+    std::cout << "Nth Minimum: " << nth_min << std::endl;
+    std::cout << "Sum: " << sum_diff << std::endl;
+    std::cout << "Difference: " << diff << std::endl;
+
+    return 0;
+}
