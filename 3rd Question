@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class SeriesSum {
+private:
+    string series;
+public:
+    SeriesSum() {}
+    SeriesSum(string s) : series(s) {}
+    
+    int calculateSum() {
+        int sum = 0;
+        string num = "";
+        for (char c : series) {
+            if (c == '+') {
+                sum += stoi(num);
+                num = "";
+            } else {
+                num += c;
+            }
+        }
+        sum += stoi(num);
+        return sum;
+    }
+};
+
+int main() {
+    SeriesSum series("9+99+999+9999+9999");
+    cout << "Input: " << series.calculateSum() << endl;
+    return 0;
+}
